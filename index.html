@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>SYSTEM ACCESS</title>
+<style>
+body{
+    margin:0;
+    background:black;
+    color:#00ff00;
+    font-family: monospace;
+    overflow:hidden;
+}
+.center{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+}
+h1{
+    font-size:40px;
+    animation: flicker 0.1s infinite;
+}
+@keyframes flicker{
+    0%{opacity:1;}
+    50%{opacity:0.3;}
+    100%{opacity:1;}
+}
+#text{
+    margin-top:20px;
+    white-space:pre-line;
+}
+</style>
+</head>
+<body>
+
+<div class="center">
+    <h1>⚠ SYSTEM BREACH ⚠</h1>
+    <div id="text"></div>
+</div>
+
+<script>
+let messages = [
+"Connexion aux serveurs...",
+"Bypass firewall...",
+"Extraction données...",
+"Accès Snapchat : OK",
+"Localisation IP : 192.168.***.***",
+"Caméra : ACTIVÉE...",
+"Microphone : ACTIVÉ...",
+"Upload en cours...",
+"ERREUR : système instable ⚠",
+"Suppression annulée (demo safe 😈)"
+];
+
+let i = 0;
+let text = document.getElementById("text");
+
+function type(){
+    if(i < messages.length){
+        text.innerHTML += messages[i] + "\n";
+        i++;
+        setTimeout(type, 1200);
+    } else {
+        text.innerHTML += "\n>>> C'ETAIT UNE BLAGUE 😎";
+    }
+}
+
+type();
+</script>
+
+</body>
+</html>
